@@ -1,7 +1,17 @@
-<div class="container">
+<div *ngIf="loading">
+	<div class="ux-loader">
+		<div class="block block-1"></div>
+		<div class="block block-2"></div>
+		<div class="block block-3"></div>
+	</div>
+</div>
+<div class="container" *ngIf="!loading">
 	<div class="row"> 
 		<div class="col-xs-12">
 			<h1>Progress Bars</h1>
+			<div class="refresh" (click)="refresh()">
+				<span class="glyphicon glyphicon-refresh"></span>
+			</div>
 		</div>
 	</div>
 	<div class="row">

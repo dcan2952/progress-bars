@@ -1,3 +1,9 @@
+.refresh {
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  cursor: pointer; }
+
 .bar {
   background-color: #f7f7f7;
   border-radius: 3px; }
@@ -63,3 +69,37 @@
   .limit .limit-value {
     font-size: 2em;
     font-weight: 700; }
+
+.ux-loader {
+  position: relative;
+  height: 6px;
+  margin: 100px auto;
+  width: 84px; }
+  .ux-loader .block {
+    display: inline-block;
+    width: 28px;
+    height: 6px;
+    position: absolute;
+    bottom: 0; }
+    .ux-loader .block.block-1 {
+      background-color: #FECB45;
+      animation: example 1.2s linear 0s infinite;
+      left: 0; }
+    .ux-loader .block.block-2 {
+      background-color: #FC6769;
+      animation: example 1.2s linear 0.1s infinite;
+      left: 28px; }
+    .ux-loader .block.block-3 {
+      background-color: #169998;
+      animation: example 1.2s linear 0.2s infinite;
+      left: 56px; }
+
+@keyframes example {
+  0% {
+    height: 6px; }
+  18% {
+    height: 28px; }
+  32% {
+    height: 6px; }
+  100% {
+    height: 6px; } }

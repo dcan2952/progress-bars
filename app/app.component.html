@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row"> 
+		<div class="col-xs-12">
+			<h1>Progress Bars</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 mt-20">
+			<div *ngFor="let bar of response.bars; let i=index">
+				<label for="bar">Progress Bar {{i+1}}</label>
+				<span class="pull-right">Progress: {{bar}}</span>
+				<div class="bar">
+					<div class="progress" [style.width]="100*bar/response.limit + '%'" [class.limit-reached]="bar/response.limit > 1">
+						<span class="percentage">{{bar/response.limit | percent:'1.0-0'}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 form-group">
+		  	<label for="bar">Progress Bar:</label>
+		  	<select class="form-control" [(ngModel)]="selectedBarIndex" required>
+		    	<option *ngFor="let bar of response.bars ; let i=index" [value]="i">Progress Bar {{i+1}}</option>
+		  	</select>
+		</div>
+		<div class="col-md-6 form-group">
+		  	<label for="bar">Increment progress by:</label>
+		  		<div class="button-container">
+					<button class="btn btn-default btn-increment" [ngClass]="{'positive':editValue>0, 'negative':editValue<0}" *ngFor="let editValue of response.buttons" type="submit" (click)="editProgress(editValue)"><span *ngIf="editValue>0" class="positive">+</span>{{editValue}}</button>
+				</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="limit">Limit: <span class="limit-value">{{response.limit}}</span></div>
+	</div>
+</div>

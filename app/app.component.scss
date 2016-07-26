@@ -1,0 +1,89 @@
+$bar-background: #f7f7f7;
+$progress-color: #6cb7ec;
+$progress-text-color: #fff;
+$button-color: #f7f7f7;
+$limit-color: #9e0000;
+
+.bar {
+	background-color: $bar-background;
+	border-radius: 3px;
+	.progress {
+		background-color: $progress-color;
+		border-radius: 4px;
+		text-align: right;
+		color: $progress-text-color;
+		max-width: 100%;
+		&.limit-reached {
+			background-color: $limit-color;
+		}
+		.percentage {
+			padding-right: 5px;
+		}
+	}
+}
+
+.mt-20 {
+	margin-top: 20px;
+}
+
+.button-container {
+	.btn-increment {
+		margin: 0 10px 5px 0;
+		width: 55px;
+		color: #fff;
+		text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+		&:last-child {
+			margin-right: 0;
+		}
+		&.positive {
+		    background-color: #60b044;
+		    background-image: -webkit-linear-gradient(#8add6d, #60b044);
+		    background-image: linear-gradient(#8add6d, #60b044);
+		    border-color: #5ca941;
+		    &:hover {
+		    	background-color: #569e3d;
+			    background-image: -webkit-linear-gradient(#79d858, #569e3d);
+			    background-image: linear-gradient(#79d858, #569e3d);
+			    border-color: #4a993e;
+		    }
+		    &:focus {
+		    	outline: none;
+		    }
+			span {
+				position: relative;
+			    top: -1px;
+			    right: 1px;
+			}
+		}
+		&.negative {
+		    background-color: #b04444;
+		    background-image: -webkit-linear-gradient(#dd6d6d, #b04444);
+		    background-image: linear-gradient(#dd6d6d, #b04444);
+		    border-color: #9e0000;
+		    &:hover {
+		    	background-color: #9e3c3c;
+			    background-image: -webkit-linear-gradient(#cc6464, #9e3c3c);
+			    background-image: linear-gradient(#cc6464, #9e3c3c);
+			    border-color: #980000;
+		    }
+		    &:focus {
+		    	outline: none;
+		    }
+		}
+	}
+}
+
+.limit {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	padding: 20px;
+	background-color: $limit-color;
+	color: white;
+	text-align: center;
+	border-radius: 5px 0 0;
+	.limit-value {
+		font-size: 2em;
+		font-weight: 700;
+	}
+}
